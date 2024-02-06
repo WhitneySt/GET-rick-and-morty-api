@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+main{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px;
+}
+
+.card{
+    display: flex;
+    gap: 10px;
+    width: 600px;
+    height: 220px;
+    background-color: rgb(60, 62, 68);
+    border-radius: 6px;
+    color: white;
+}
+
+.card img{
+    border-radius: 6px 0 0 6px;
+}
+
+.card section{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.card h2{
+    font-size: 30px;
+}
+
+.card h6{
+    font-size: 18px;
+}
+
+.icon{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    
+}
+
+.status{
+    display: flex;
+    gap: 5px;
+}
+
+.isAlive{
+    background-color: rgb(100, 255, 11);
+}
+
+.isDead{
+    background-color: rgb(246, 14, 14);
+}
+
+.isUnKnown{
+    background-color: rgb(78, 79, 78);
+}
