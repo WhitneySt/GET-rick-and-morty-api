@@ -80,8 +80,33 @@ const getCharacters2 = async (url) => {
   }
 };
 
+let characters = [];
+const container = document.querySelector("main");
+
 document.addEventListener("DOMContentLoaded", async () => {
-  const characters = await getCharacters2(url);
-  const container = document.querySelector("main");
+  characters = await getCharacters2(url);
   printCharacters(container, characters);
+});
+
+const input = document.getElementById("search");
+
+function searchByName(searchTerm, charactersList) {
+  const results = charactersList.filter((person) =>
+    person.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  return results;
+}
+
+input.addEventListener("input", (event) => {
+  const searchTerm = event.target.value;
+  if (searchTerm.length > 3) {
+    //Se ejecuta la función de busqueda: 
+    const filteredCharacters = searchByName(searchTerm, characters);
+    printCharacters(container, filteredCharacters);
+  }
+
+  if (searchTerm.length === 0) {
+    printCharacters(container, characters);
+  }
 });
